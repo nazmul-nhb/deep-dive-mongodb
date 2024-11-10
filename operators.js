@@ -7,3 +7,5 @@ db.test.find(
     },
     { name: 1, gender: 1, age: 1, interests: 1 })
     .sort({ age: 1 })
+
+    // $in --> implicit or
