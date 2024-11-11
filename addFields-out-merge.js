@@ -5,8 +5,9 @@ db.test.aggregate([
     { $addFields: { course: "Hakuna Matata" } },
     // Stage #3
     { $project: { course: 1 } },
-    // Stage #4 => $out creates new collection from the result of aggregation so far
+    // Stage #4 => $out creates new collection from the result of aggregation so far.
+    // $out can only be used as the last stage of the pipeline
     // { $out: "courses" },
-    // Stage #5 $merge merges the output with the docs in the existing collection
+    // Stage #4 => $merge merges the output with the docs in the existing collection
     { $merge: "test" }
 ])
